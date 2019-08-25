@@ -1,6 +1,6 @@
 import React from 'react';
 
-const API = 'https://date.nager.at'
+const API = 'https://date.nager.at/'
 class Main extends React.Component {
     state = {
         data: null,
@@ -9,6 +9,7 @@ class Main extends React.Component {
     handleDataFetch = () => {
         fetch(API, { mode: 'no-cors' })
             .then(response => {
+                console.log(response);
                 if (response.ok) {
                     return response
                 }
@@ -20,7 +21,7 @@ class Main extends React.Component {
                     data: data.results
                 })
             })
-            .catch(error => console.log("nie dziala"))
+            .catch(error => console.log("nie dziala koniec"))
     }
     render() {
         return (
