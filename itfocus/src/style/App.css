@@ -16,7 +16,10 @@
   text-decoration: underline;
   color: darkred;
   font-weight: bold;
+}
 
+form{
+  margin-top: 50px;
 }
 input {
   margin-left: 10px;
@@ -32,5 +35,12 @@ button {
   color: red;
   background-color: aliceblue;
   font-size: 30px;
-  display: none;
+  /* display: none; */
+}
+
+/* MainSection */
+
+.mainSection{
+  min-height: 500px;
+  padding-top: 50px;
 }
