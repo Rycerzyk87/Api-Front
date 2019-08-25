@@ -1,6 +1,5 @@
 import React from 'react';
 import '../style/App.css';
-import Main from './Main';
 import Loggin from './Loggin.js';
 
 class App extends React.Component {
@@ -9,9 +8,9 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="App">
         <Loggin />
-        <Main />
+
       </div>
     );
   }
