@@ -585,6 +585,9 @@ class Main extends React.Component {
 
                 {/* < button onClick={this.handleDataFetch} > pobierz dane</button > */}
                 <select></select>
+                <button>Kalendarz</button>
+                <button>Statystyka</button>
+
             </div >
         );
     }
