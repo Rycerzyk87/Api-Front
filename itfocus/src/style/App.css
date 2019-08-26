@@ -47,3 +47,9 @@ button {
 .mainSection button {
   margin: 20px;
 }
+
+/* callender */
+.calender{
+  width: 80%;
+  text-align: center
+}

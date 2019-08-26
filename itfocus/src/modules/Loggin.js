@@ -6,7 +6,6 @@ class Loggin extends React.Component {
     state = {
         login: "",
         password: "",
-        permission: false,
         logg: "",
     }
     handleChangeLogin = (e) => {
@@ -25,7 +24,7 @@ class Loggin extends React.Component {
             logg: this.state.login,
             login: "",
             password: "",
-            permission: true,
+
 
         }) :
             this.setState({
@@ -53,7 +52,6 @@ class Loggin extends React.Component {
                     <label htmlFor="">Podaj Hasło<input value={this.state.password} type="password" onChange={this.handleChangeLoginPassword} /></label><br></br>
                     <button className="submit">Zaloguj</button>
                 </form>
-                {/* <Main /> */}
                 {this.state.logg !== "" ? <Main /> : <p className="error" >Dalsza sekcja dostępna dla zalogowanych użytkowników</p>}
             </>
         );
