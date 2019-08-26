@@ -1,31 +1,5 @@
 import React from 'react';
 
-const holidays = [
-    {
-        month: 'styczeń',
-        number: 2
-    },
-    {
-        currencyName: 'Luty',
-        number: 0
-    },
-    {
-        currencyName: 'marzec',
-        number: 0
-    },
-    {
-        currencyName: 'kwiecień',
-        number: 3
-    },
-    {
-        currencyName: 'maj',
-        number: 2
-    },
-    {
-        currencyName: 'czerwiec',
-        number: 1
-    }
-];
 
 const Line = ({ left }) => {
     return (
@@ -48,23 +22,38 @@ const Bar = ({ percent }) => {
     )
 }
 
-renderBars() {
-    const { holidays } = this.props;
 
-    return holidays.map((holiday) => {
-        const percent = holiday.number * 20
-        return (
-            <Bar
-                percent={percent}
-                key={holiday.month}
-            />
-        )
-    })
-
-}
 
 class Graph extends React.Component {
-    state = {}
+    state = {
+        holidays: [
+            {
+                month: 'styczeń',
+                number: 2
+            },
+            {
+                currencyName: 'Luty',
+                number: 0
+            },
+            {
+                currencyName: 'marzec',
+                number: 0
+            },
+            {
+                currencyName: 'kwiecień',
+                number: 3
+            },
+            {
+                currencyName: 'maj',
+                number: 2
+            },
+            {
+                currencyName: 'czerwiec',
+                number: 1
+            }
+        ]
+    }
+
     renderLines() {
         return Array(10).fill(null).map((el, i) => (
             <Line
@@ -73,6 +62,20 @@ class Graph extends React.Component {
             />
         ))
     }
+    renderBars() {
+
+
+        this.state.holidays.map((holiday) => {
+            const percent = holiday.number * 20
+            return (
+                <Bar
+                    percent={percent}
+                // key={holiday.month}
+                />
+            )
+        })
+
+    }
     render() {
         return (
             <div className="graph-wrapper">
@@ -80,10 +83,8 @@ class Graph extends React.Component {
                     <BarTextContent />
                     <div className="bar-lines-container">
                         {this.renderLines()}
-                        <Bar percent={20} />
-                        <Bar percent={50} />
-                        <Bar percent={50} />
-                        <Bar percent={60} />
+                        {this.renderBars()}
+
 
                     </div>
                 </div>
