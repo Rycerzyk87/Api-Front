@@ -1,5 +1,5 @@
 import React from 'react';
-
+// tworzenie siatki
 
 const Line = ({ left }) => {
     return (
@@ -9,13 +9,8 @@ const Line = ({ left }) => {
     )
 }
 
-const BarTextContent = () => {
-    return (
-        <div className="bar-text-content">
+// tworzenie pojedyńćzego wykresu
 
-        </div>
-    )
-}
 const Bar = ({ percent }) => {
     return (
         <div className="bar" style={{ width: `${percent}%` }}></div>
@@ -77,7 +72,7 @@ class Graph extends React.Component {
             },
         ]
     }
-
+    // tworzenie siatki
     renderLines() {
         return Array(10).fill(null).map((el, i) => (
             <Line
@@ -86,12 +81,29 @@ class Graph extends React.Component {
             />
         ))
     }
+    // tworzenie opisu poszczególnego wykresu
+
+    barTextContent() {
+        return (
+            <div className="bar-text-content">
+                {
+                    this.state.holidays.map((holiday) => (
+                        <div className="text">
+                            {holiday.month}
+                        </div>
+                    ))
+                }
+
+            </div>
+
+        )
+    }
 
     render() {
         return (
             <div className="graph-wrapper">
                 <div className="graph">
-                    <BarTextContent />
+                    {this.barTextContent()}
                     <div className="bar-lines-container">
                         {this.renderLines()}
                         {this.state.holidays.map((holiday) => {
