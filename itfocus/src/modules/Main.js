@@ -1,13 +1,16 @@
 import React from 'react';
+import Graph from './Graph.js';
 
-// const API = 'https://date.nager.at/Api/v1/Get/{this.state.country}/{this.state.year}';
+// let API = 'https://date.nager.at/Api/v1/Get/{this.state.country}/{this.state.year}';
 // const API2 = 'https://date.nager.at/Api/v2/AvailableCountries';
 
 class Main extends React.Component {
     state = {
+        // domyślne wartości dla state, section wskazuje domyślną pozycję kalendarza
         section: "cal",
         year: 2019,
         country: "PL",
+        // nie udało mi się połączyć z API, dlatego przypisałem wartośći, żeby opracować przynajmniej resztę. 8/10 czasu poświęconego na to zadanie poświęciłem na kompunikację z API - mogłem szybciej odpuścić i dopracować resztę. 
         data: [
             {
                 "date": "2019-01-01",
@@ -153,7 +156,7 @@ class Main extends React.Component {
                 "type": "Public"
             }
         ],
-        states: [[
+        states: [
             {
                 "key": "AD",
                 "value": "Andorra"
@@ -558,7 +561,7 @@ class Main extends React.Component {
                 "key": "ZW",
                 "value": "Zimbabwe"
             }
-        ]]
+        ]
     };
 
     // handleDataFetch = () => {
@@ -581,6 +584,8 @@ class Main extends React.Component {
 
 
 
+    // obsługa stanów
+
     changeSemiSectionCal = (e) => {
         this.setState({
             section: "cal"
@@ -600,29 +605,35 @@ class Main extends React.Component {
         this.setState({
             year: this.state.year - 1,
         })
-        console.log(this.state.states);
+
     }
+
     render() {
 
         return (
             <div className="mainSection">
 
                 <div>
-                    <select>
-                        {this.state.states.map((state) => <option key={state.id}>{state.value}</option>)}
+                    <select onChange={(e) => this.setState({ country: e.target.key })}>
+
+                        {this.state.states.map((state) => <option key={state.key} >{state.key} {state.value}</option>)}
                     </select>
                     <button onClick={this.changeSemiSectionCal}>Kalendarz</button>
                     <button onClick={this.changeSemiSectionStat}>Statystyka</button>
                 </div>
                 <div>
+                    {/* na podstawie state zwracam odpowiednią sekcję */}
                     {this.state.section === "cal" ? <div className="calender">
                         <button onClick={this.changeYearPlus}>dodaj rok</button>
+                        <span>Wybrany rok to: {this.state.year}</span>
                         <button onClick={this.changeYearMinus}>odejmij rok</button>
                         <ul>
-                            {this.state.date.map((holiday) => <li key={holiday.date}>{holiday.date}{holiday.localName}</li>)}
+                            {this.state.data.map((holiday) => <li key={holiday.date}>{holiday.date} {holiday.localName}</li>)}
                         </ul>
                     </div> :
-                        <div>statki</div>}
+                        <div>
+                            <Graph />
+                        </div>}
                 </div>
 
             </div >

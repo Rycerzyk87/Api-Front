@@ -53,3 +53,16 @@ button {
   width: 80%;
   text-align: center
 }
+ul{
+  padding-left: 100px;
+  text-align: left;
+}
+
+/*  statystyka */
+
+.graph{
+  position: relative;
+  max-width: 800px;
+  height: 400px;
+  background: #ddd;
+}
