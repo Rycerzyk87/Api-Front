@@ -1,8 +1,10 @@
 import React from 'react';
 import Graph from './Graph.js';
 
-// let API = 'https://date.nager.at/Api/v1/Get/{this.state.country}/{this.state.year}';
-// const API2 = 'https://date.nager.at/Api/v2/AvailableCountries';
+
+
+
+
 
 class Main extends React.Component {
     state = {
@@ -586,6 +588,9 @@ class Main extends React.Component {
 
     // obsługa stanów
 
+
+
+
     changeSemiSectionCal = (e) => {
         this.setState({
             section: "cal"
@@ -607,7 +612,27 @@ class Main extends React.Component {
         })
 
     }
+    handleDataFetch = (e) => {
+        let API = `https://date.nager.at/Api/v1/Get/'${this.state.country}'/'${this.state.year}'`;
+        const API2 = 'https://date.nager.at/Api/v2/AvailableCountries';
 
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const targetUrl = 'https://date.nager.at/Api/v1/Get/PL/2019';
+
+        fetch(proxyUrl + targetUrl, {
+            method: 'GET',
+        }).then(response => response.json())
+            .then(data => {
+                this.setState({
+                    data: data.results
+                })
+            }
+    };
+
+    componentDidMount() {
+        this.handleDataFetch()
+
+    }
     render() {
 
         return (
