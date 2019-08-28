@@ -21,57 +21,25 @@ const Bar = ({ percent }) => {
 
 class Graph extends React.Component {
     state = {
-        holidays: [
-            {
-                month: 'styczeń',
-                number: 2
-            },
-            {
-                currencyName: 'Luty',
-                number: 0
-            },
-            {
-                currencyName: 'marzec',
-                number: 0
-            },
-            {
-                currencyName: 'kwiecień',
-                number: 3
-            },
-            {
-                currencyName: 'maj',
-                number: 2
-            },
-            {
-                currencyName: 'czerwiec',
-                number: 1
-            },
-            {
-                currencyName: 'lipiec',
-                number: 0
-            },
-            {
-                currencyName: 'sierpień',
-                number: 1
-            },
-            {
-                currencyName: 'wrzesień',
-                number: 0
-            },
-            {
-                currencyName: 'październik',
-                number: 0
-            },
-            {
-                currencyName: 'listopad',
-                number: 1
-            },
-            {
-                currencyName: 'grudzień',
-                number: 2
-            },
-        ]
+        holidays: []
     }
+    handleDataFetchHolidays = (e) => {
+
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const targetUrl = 'https://date.nager.at/Api/v1/Get/GB/2019';
+
+        fetch(proxyUrl + targetUrl, {
+            method: 'GET',
+        }).then(response => response.json())
+            .then(data => {
+
+                this.setState({
+                    holidays: data
+                })
+            }
+            );
+    };
+
     // tworzenie siatki
     renderLines() {
         return Array(10).fill(null).map((el, i) => (
@@ -98,7 +66,11 @@ class Graph extends React.Component {
 
         )
     }
+    componentDidMount() {
+        this.handleDataFetchHolidays()
 
+
+    }
     render() {
         return (
             <div className="graph-wrapper">
