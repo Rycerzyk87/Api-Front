@@ -12,7 +12,6 @@ class Main extends React.Component {
         section: "cal",
         year: 2019,
         country: "PL",
-        // nie udało mi się połączyć z API, dlatego przypisałem wartośći, żeby opracować przynajmniej resztę. 8/10 czasu poświęconego na to zadanie poświęciłem na kompunikację z API - mogłem szybciej odpuścić i dopracować resztę. 
         data: [],
         states: []
     };
@@ -39,8 +38,6 @@ class Main extends React.Component {
 
     }
     handleDataFetchHolidays = (e) => {
-        // let API = `https://date.nager.at/Api/v1/Get/'${this.state.country}'/'${this.state.year}'`;
-
 
         const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
         const targetUrl = `https://date.nager.at/Api/v1/Get/${this.state.country}/${this.state.year}`;
@@ -65,7 +62,7 @@ class Main extends React.Component {
             method: 'GET',
         }).then(response => response.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 this.setState({
                     states: data
                 })
@@ -81,7 +78,11 @@ class Main extends React.Component {
         this.handleDataFetchHolidays()
     }
     render() {
-
+        if (this.state.data.length === 0) {
+            return (
+                <div><h1>Oczekiwanie na dane...</h1></div>
+            );
+        }
         return (
             <div className="mainSection">
 
