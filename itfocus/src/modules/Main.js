@@ -65,7 +65,7 @@ class Main extends React.Component {
             method: 'GET',
         }).then(response => response.json())
             .then(data => {
-
+                console.log(data)
                 this.setState({
                     states: data
                 })
@@ -77,15 +77,18 @@ class Main extends React.Component {
         this.handleDataFetchStates()
 
     }
+    componentWillUpdate() {
+        this.handleDataFetchHolidays()
+    }
     render() {
 
         return (
             <div className="mainSection">
 
                 <div>
-                    <select onChange={(e) => this.setState({ country: e.target.key })}>
+                    <select onChange={(e) => this.setState({ country: e.target.value })}>
 
-                        {this.state.states.map((state) => <option key={state.key} >{state.key} {state.value}</option>)}
+                        {this.state.states.map((state) => <option key={state.key} value={state.key}>{state.value}</option>)}
                     </select>
                     <button onClick={this.changeSemiSectionCal}>Kalendarz</button>
                     <button onClick={this.changeSemiSectionStat}>Statystyka</button>
