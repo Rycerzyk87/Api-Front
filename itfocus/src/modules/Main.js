@@ -39,11 +39,11 @@ class Main extends React.Component {
 
     }
     handleDataFetchHolidays = (e) => {
-        let API = `https://date.nager.at/Api/v1/Get/'${this.state.country}'/'${this.state.year}'`;
+        // let API = `https://date.nager.at/Api/v1/Get/'${this.state.country}'/'${this.state.year}'`;
 
 
         const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-        const targetUrl = 'https://date.nager.at/Api/v1/Get/GB/2019';
+        const targetUrl = `https://date.nager.at/Api/v1/Get/${this.state.country}/${this.state.year}`;
 
         fetch(proxyUrl + targetUrl, {
             method: 'GET',
