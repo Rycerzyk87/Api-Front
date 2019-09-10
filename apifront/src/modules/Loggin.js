@@ -8,7 +8,6 @@ class Loggin extends React.Component {
         password: "",
         logg: "",
     }
-    // obsługa state
     handleChangeLogin = (e) => {
         this.setState({
             login: e.target.value
@@ -22,10 +21,10 @@ class Loggin extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.state.password === "admin" ? this.setState({
-                logg: this.state.login,
-                login: "",
-                password: "",
-            }) :
+            logg: this.state.login,
+            login: "",
+            password: "",
+        }) :
             this.setState({
                 login: "",
                 password: "",
@@ -48,7 +47,6 @@ class Loggin extends React.Component {
                     <label htmlFor="">Podaj Hasło<input value={this.state.password} type="password" onChange={this.handleChangeLoginPassword} /></label><br></br>
                     <button className="submit">Zaloguj</button>
                 </form>
-                {/* przy pomocy state.logg określam czy pojawi się sekcja Main */}
                 {this.state.logg !== "" ? <Main /> : <p className="error" >Dalsza sekcja dostępna dla zalogowanych użytkowników</p>}
             </>
         );

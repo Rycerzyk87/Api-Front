@@ -8,7 +8,6 @@ import Graph from './Graph.js';
 
 class Main extends React.Component {
     state = {
-        // domyślne wartości dla state, section wskazuje domyślną pozycję kalendarza
         section: "cal",
         year: 2019,
         country: "PL",
@@ -95,13 +94,11 @@ class Main extends React.Component {
                     <button onClick={this.changeSemiSectionStat}>Statystyka</button>
                 </div>
                 <div>
-                    {/* na podstawie state zwracam odpowiednią sekcję */}
                     {this.state.section === "cal" ? <div className="calender">
                         <button onClick={this.changeYearPlus}>dodaj rok</button>
                         <span>Wybrany rok to: {this.state.year}</span>
                         <button onClick={this.changeYearMinus}>odejmij rok</button>
                         <ul>
-                            {/* generuję z tablicy wszystkie święta */}
                             {this.state.data.map((holiday) => <li key={holiday.date}>{holiday.date} {holiday.localName}</li>)}
                         </ul>
                     </div> :
