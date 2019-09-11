@@ -1,11 +1,6 @@
 import React from 'react';
 import Graph from './Graph.js';
 
-
-
-
-
-
 class Main extends React.Component {
     state = {
         section: "cal",
@@ -45,10 +40,11 @@ class Main extends React.Component {
             method: 'GET',
         }).then(response => response.json())
             .then(data => {
-
+                // console.log(data);
                 this.setState({
                     data: data
                 })
+
             }
             );
     };
@@ -61,7 +57,6 @@ class Main extends React.Component {
             method: 'GET',
         }).then(response => response.json())
             .then(data => {
-                // console.log(data)
                 this.setState({
                     states: data
                 })
@@ -73,7 +68,7 @@ class Main extends React.Component {
         this.handleDataFetchStates()
 
     }
-    componentWillUpdate() {
+    componentDidUpdate() {
         this.handleDataFetchHolidays()
     }
     render() {
@@ -99,7 +94,7 @@ class Main extends React.Component {
                         <span>Wybrany rok to: {this.state.year}</span>
                         <button onClick={this.changeYearMinus}>odejmij rok</button>
                         <ul>
-                            {this.state.data.map((holiday) => <li key={holiday.date}>{holiday.date} {holiday.localName}</li>)}
+                            {this.state.data.map((holiday) => <li key={holiday.date}>{holiday.date} <span>{holiday.localName}</span></li>)}
                         </ul>
                     </div> :
                         <div>

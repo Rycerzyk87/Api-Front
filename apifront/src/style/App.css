@@ -76,7 +76,13 @@ ul{
   text-align: left;
 }
 
-
+li{
+  list-style: none;
+}
+li span{
+  margin-left: 20px;
+  font-weight: 500;
+}
 /*  statystyka */
 
 .graph{

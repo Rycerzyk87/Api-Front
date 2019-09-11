@@ -42,9 +42,9 @@ class Loggin extends React.Component {
                     <p>Zalogowany użytkownik: <br></br><span className="user">{this.state.logg}</span></p>
                     <button onClick={this.handleChangeLogg}>Wyloguj</button>
                 </div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} autoComplete="on">
                     <label htmlFor="">Podaj Login<input value={this.state.login} type="text" onChange={this.handleChangeLogin} /></label><br></br>
-                    <label htmlFor="">Podaj Hasło<input value={this.state.password} type="password" onChange={this.handleChangeLoginPassword} /></label><br></br>
+                    <label htmlFor="">Podaj Hasło<input value={this.state.password} type="password" onChange={this.handleChangeLoginPassword} autoComplete="off" /></label><br></br>
                     <button className="submit">Zaloguj</button>
                 </form>
                 {this.state.logg !== "" ? <Main /> : <p className="error" >Dalsza sekcja dostępna dla zalogowanych użytkowników</p>}
