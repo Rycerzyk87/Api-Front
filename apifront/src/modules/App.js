@@ -1,6 +1,7 @@
 import React from 'react';
 import '../style/App.css';
 import Loggin from './Loggin.js';
+import Footer from './Footer';
 
 
 class App extends React.Component {
@@ -11,6 +12,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Loggin />
+        <Footer />
       </div>
     );
   }
