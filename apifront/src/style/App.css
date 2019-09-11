@@ -61,6 +61,10 @@ select{
   font-size: 20px;
   padding-left: 20px;
 }
+.waiting{
+  min-height: 300px;
+  margin-top: 150px;
+}
 
 /* callender */
 .calender{
@@ -115,7 +119,7 @@ ul{
   justify-content: space-around;
 }
 
-p.footer:first-child{
-  background-color: #222;
-  font-size: 2px;
+.feedback{
+  align-self: flex-end;
+  font-size: 12px
 }

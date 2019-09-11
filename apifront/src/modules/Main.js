@@ -79,7 +79,7 @@ class Main extends React.Component {
     render() {
         if (this.state.data.length === 0) {
             return (
-                <div><h1>Oczekiwanie na dane...</h1></div>
+                <div className="waiting"><h1>Oczekiwanie na dane...</h1></div>
             );
         }
         return (
