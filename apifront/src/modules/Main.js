@@ -1,5 +1,14 @@
 import React from 'react';
-import Graph from './Graph.js';
+
+
+const Graph = () => {
+    return (
+        <div className="graph">
+            statki
+        </div>
+    )
+}
+
 
 class Main extends React.Component {
     state = {
@@ -71,6 +80,19 @@ class Main extends React.Component {
     componentDidUpdate() {
         this.handleDataFetchHolidays()
     }
+
+    // 
+
+    Graph = (data) => {
+        this.setState({
+            data
+        });
+        return (
+            <div>stttststs</div>
+        )
+    }
+
+    // 
     render() {
         if (this.state.data.length === 0) {
             return (
