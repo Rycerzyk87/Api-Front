@@ -1,8 +1,12 @@
 import React from 'react';
 
 class Graph extends React.Component {
-    state = {}
+    state = {
+        data: [],
+    }
+
     render() {
+
         return (
             <div>statystyka</div>
         );
