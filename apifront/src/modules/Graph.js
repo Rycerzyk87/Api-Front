@@ -10,7 +10,7 @@ class Graph extends React.Component {
         return (
             <div className="graph">
                 <p>IN CONSTRUCTION</p>
-                <img className="work" src=""></img>
+                <div className="work"></div>
             </div>
         );
     }
