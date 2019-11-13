@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/itfocus.iml" filepath="$PROJECT_DIR$/.idea/itfocus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/IT.Focus.iml" filepath="$PROJECT_DIR$/.idea/IT.Focus.iml" />
     </modules>
   </component>
 </project>

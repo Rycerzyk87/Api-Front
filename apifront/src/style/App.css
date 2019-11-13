@@ -5,7 +5,7 @@
   padding: 20px;
   font-size: 22px;
   color: #99ffcc;
-  background-color: #006633;
+  background-color: rgb(112, 30, 30);
   
 }
 /* Loggin.css */
@@ -46,6 +46,7 @@ button {
   font-size: 35px;
   font-weight: 600;
   padding-top: 100px; 
+  text-transform: uppercase;
 }
 
 /* MainSection */
@@ -117,7 +118,11 @@ li span{
   border-bottom: 1px solid #222;
   border-right: 1px solid #222;
 }
-
+.work{
+  width: 100px;
+  height: 100px;
+  
+}
 /* footer */
 
 .footer{
@@ -127,5 +132,5 @@ li span{
 
 .feedback{
   align-self: flex-end;
-  font-size: 12px
+  font-size: 9px
 }

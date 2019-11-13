@@ -8,7 +8,10 @@ class Graph extends React.Component {
     render() {
 
         return (
-            <div>statystyka</div>
+            <div className="graph">
+                <p>IN CONSTRUCTION</p>
+                <img className="work" src=""></img>
+            </div>
         );
     }
 }
