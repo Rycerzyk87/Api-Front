@@ -47,7 +47,7 @@ class Loggin extends React.Component {
                     <label htmlFor="">Podaj Hasło<input value={this.state.password} type="password" onChange={this.handleChangeLoginPassword} autoComplete="off" /></label><br></br>
                     <button className="submit">Zaloguj</button>
                 </form>
-                {this.state.logg !== "" ? <Main /> : <p className="error" >Dalsza sekcja dostępna dla zalogowanych użytkowników</p>}
+                {this.state.logg !== "" ? <Main /> : <p className="error" >Dalsza sekcja dostępna dla zalogowanych użytkowników<p className="protip">(najlepsze hasło to admin ;-) )</p></p>}
             </>
         );
     }
