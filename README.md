@@ -1,12 +1,14 @@
-# Api-Front
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This is my simple app to make use of hilidayAPI.
+This is my simple app to make use of holidayAPI.
 
-https://date.nager.at/
+API link: https://date.nager.at/
 
 To communicate with API i use fetch method.
+
+### What you need?
+
+React.js that's all
 
 ### `npm start`
 
