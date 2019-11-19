@@ -9,7 +9,7 @@ class Graph extends React.Component {
 
         return (
             <div className="graph">
-                <p>IN CONSTRUCTION</p>
+                <p>CONSTRUCTION IN PROGRES...</p>
                 <div className="work"></div>
             </div>
         );

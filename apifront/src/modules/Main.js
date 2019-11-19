@@ -41,7 +41,6 @@ class Main extends React.Component {
             method: 'GET',
         }).then(response => response.json())
             .then(data => {
-                // console.log(data);
                 this.setState({
                     data: data
                 })
