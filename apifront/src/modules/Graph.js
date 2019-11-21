@@ -11,6 +11,7 @@ class Graph extends React.Component {
             <div className="graph">
                 <p>CONSTRUCTION IN PROGRES...</p>
                 <div className="work"></div>
+                <div className="wkres"></div>
             </div>
         );
     }
