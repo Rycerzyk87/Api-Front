@@ -135,9 +135,13 @@ li span{
 .footer{
   display: flex;
   justify-content: space-around;
+  font-size: 16px;
 }
 
 .feedback{
   align-self: flex-end;
   font-size: 9px
+}
+.nick{
+  font-weight: bold;
 }
