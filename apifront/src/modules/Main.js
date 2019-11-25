@@ -75,25 +75,26 @@ class Main extends React.Component {
     render() {
         if (this.state.data.length === 0) {
             return (
-                <div className="waiting"><h1>Oczekiwanie na dane... </h1></div>
+                <div className="waiting"><h1>Waiting for data... </h1></div>
             );
         }
         return (
             <div className="mainSection">
 
                 <div>
+                    <span>Choose country: </span>
                     <select onChange={(e) => this.setState({ country: e.target.value })}>
 
                         {this.state.states.map((state) => <option key={state.key} value={state.key}>{state.value}</option>)}
                     </select>
-                    <button onClick={this.changeSemiSectionCal}>Kalendarz</button>
-                    <button onClick={this.changeSemiSectionStat}>Statystyka</button>
+                    <button onClick={this.changeSemiSectionCal}>Calendar</button>
+                    <button onClick={this.changeSemiSectionStat}>Stats</button>
                 </div>
                 <div>
                     {this.state.section === "cal" ? <div className="calender">
-                        <button onClick={this.changeYearPlus}>dodaj rok</button>
-                        <span>Wybrany rok to: {this.state.year}</span>
-                        <button onClick={this.changeYearMinus}>odejmij rok</button>
+                        <button onClick={this.changeYearPlus}>add year</button>
+                        <span>Choosen year: {this.state.year}</span>
+                        <button onClick={this.changeYearMinus}>remove year</button>
                         <ul>
                             {this.state.data.map((holiday) => <li key={holiday.date}>{holiday.date} <span>{holiday.localName}</span></li>)}
                         </ul>
